@@ -126,5 +126,5 @@ export class WebSocketService {
 }
 
 // 创建单例
-const wsUrl = import.meta.env.VITE_WS_URL || 'ws://localhost:3001';
+const wsUrl = import.meta.env.VITE_WS_URL || 'ws://localhost:3012';
 export const websocketService = new WebSocketService(wsUrl);

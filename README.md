@@ -105,12 +105,31 @@ xianhuohuangjin/
 
 ## 🚀 快速开始
 
-### 环境要求
+### 方式一：使用 Docker（推荐）
 
+**环境要求**:
+- Docker >= 20.10.0
+- Docker Compose >= 2.0.0
+
+**一键启动**:
+```bash
+chmod +x docker-start.sh
+./docker-start.sh
+```
+
+访问地址：
+- 前端: http://localhost:3011
+- 后端: http://localhost:3012
+
+详细说明请查看 [DOCKER.md](DOCKER.md)
+
+### 方式二：本地开发
+
+**环境要求**:
 - Node.js >= 16.0.0
 - npm >= 8.0.0
 
-### 安装步骤
+**安装步骤**:
 
 1. **克隆项目**
 ```bash
@@ -118,49 +137,29 @@ git clone <repository-url>
 cd xianhuohuangjin
 ```
 
-2. **安装后端依赖**
+2. **安装依赖**
 ```bash
+./setup.sh
+```
+
+3. **启动服务**
+```bash
+./start.sh
+```
+
+或手动启动：
+
+```bash
+# 终端1 - 启动后端
 cd backend
-npm install
-```
+npm run dev  # 运行在 http://localhost:3012
 
-3. **配置后端环境变量**
-```bash
-cp .env.example .env
-# 编辑 .env 文件，配置必要的参数
-```
-
-4. **安装前端依赖**
-```bash
-cd ../frontend
-npm install
-```
-
-5. **配置前端环境变量**
-```bash
-cp .env.example .env
-# 如使用默认配置可跳过此步
-```
-
-### 运行项目
-
-#### 开发模式
-
-**启动后端服务:**
-```bash
-cd backend
-npm run dev
-```
-后端服务将在 `http://localhost:3001` 启动
-
-**启动前端应用:**
-```bash
+# 终端2 - 启动前端
 cd frontend
-npm run dev
+npm run dev  # 运行在 http://localhost:3011
 ```
-前端应用将在 `http://localhost:3000` 启动
 
-访问 `http://localhost:3000` 即可看到应用界面
+访问 `http://localhost:3011` 即可看到应用界面
 
 #### 生产模式
 
@@ -193,7 +192,7 @@ npm run preview
 
 ### WebSocket
 
-连接到 `ws://localhost:3001` 接收实时市场数据
+连接到 `ws://localhost:3012` 接收实时市场数据
 
 **消息类型:**
 - `connected`: 连接成功
@@ -262,7 +261,7 @@ npm run preview
 ### 后端配置 (.env)
 
 ```env
-PORT=3001                    # 服务器端口
+PORT=3012                    # 服务器端口
 GOLD_API_KEY=your_api_key   # 黄金价格 API 密钥 (可选)
 UPDATE_INTERVAL=10000        # 数据更新间隔 (毫秒)
 ```
@@ -270,8 +269,8 @@ UPDATE_INTERVAL=10000        # 数据更新间隔 (毫秒)
 ### 前端配置 (.env)
 
 ```env
-VITE_WS_URL=ws://localhost:3001      # WebSocket 地址
-VITE_API_URL=http://localhost:3001/api  # API 地址
+VITE_WS_URL=ws://localhost:3012      # WebSocket 地址
+VITE_API_URL=http://localhost:3012/api  # API 地址
 ```
 
 ## 📝 开发说明
