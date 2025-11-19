@@ -68,12 +68,12 @@ export class SignalGenerator {
     }
 
     // 3. 趋势强度 - MACD
-    const { macd, signal, histogram } = indicators.macd;
-    if (macd !== null && signal !== null && histogram !== null) {
-      if (histogram > 0 && macd > 0) {
+    const { macd, signal: macdSignal, histogram } = indicators.macd;
+    if (macd !== null && macdSignal !== null && histogram !== null) {
+      if (histogram > 0 && macd > macdSignal) {
         bullishScore += 25;
         reasons.push('MACD金叉且位于零轴上方，多头趋势');
-      } else if (histogram < 0 && macd < 0) {
+      } else if (histogram < 0 && macd < macdSignal) {
         bearishScore += 25;
         reasons.push('MACD死叉且位于零轴下方，空头趋势');
       } else if (histogram > 0) {
