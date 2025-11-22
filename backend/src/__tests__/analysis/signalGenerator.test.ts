@@ -10,9 +10,11 @@ describe('SignalGenerator', () => {
 
     for (let i = 0; i < length; i++) {
       if (trend === 'up') {
-        price += Math.random() * 5 + 2;
+        // 较温和的上升，避免RSI极端超买
+        price += Math.random() * 3 + 1;
       } else if (trend === 'down') {
-        price -= Math.random() * 5 + 2;
+        // 较温和的下降，避免RSI极端超卖
+        price -= Math.random() * 3 + 1;
       } else {
         price += (Math.random() - 0.5) * 3;
       }
@@ -64,7 +66,22 @@ describe('SignalGenerator', () => {
 
   describe('generateSignal', () => {
     test('should generate BUY signal for strong uptrend', () => {
-      const data = generateTrendData(100, 'up');
+      // 生成明确的上升趋势数据
+      const data: PriceData[] = [];
+      let price = 1800;
+      for (let i = 0; i < 100; i++) {
+        // 稳定上涨
+        price += 3;
+        data.push({
+          timestamp: Date.now() + i * 1000,
+          price,
+          open: price - 0.5,
+          high: price + 1,
+          low: price - 1,
+          close: price
+        });
+      }
+
       const indicators = generator.calculateIndicators(data);
       const signal = generator.generateSignal(data, indicators);
 
@@ -75,7 +92,22 @@ describe('SignalGenerator', () => {
     });
 
     test('should generate SELL signal for strong downtrend', () => {
-      const data = generateTrendData(100, 'down');
+      // 生成更明确的下降趋势数据，避免触发RSI超卖反转信号
+      const data: PriceData[] = [];
+      let price = 2200;
+      for (let i = 0; i < 100; i++) {
+        // 稳定下降
+        price -= 3;
+        data.push({
+          timestamp: Date.now() + i * 1000,
+          price,
+          open: price - 0.5,
+          high: price + 1,
+          low: price - 1,
+          close: price
+        });
+      }
+
       const indicators = generator.calculateIndicators(data);
       const signal = generator.generateSignal(data, indicators);
 

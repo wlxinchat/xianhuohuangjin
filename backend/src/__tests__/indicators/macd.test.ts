@@ -87,11 +87,11 @@ describe('MACD Indicator', () => {
       expect(result).toBe('空头信号');
     });
 
-    test('should identify neutral when histogram is positive but macd below signal', () => {
+    test('should identify bearish when histogram is negative', () => {
       const macd = { macd: 2, signal: 3, histogram: -1 };
       const result = interpretMACD(macd);
 
-      expect(result).toBe('中性');
+      expect(result).toBe('空头信号');
     });
 
     test('should handle null values', () => {

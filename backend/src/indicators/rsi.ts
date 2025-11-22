@@ -50,9 +50,9 @@ export function calculateRSI(data: PriceData[], period: number = 14): number | n
 export function interpretRSI(rsi: number | null): string {
   if (rsi === null) return '数据不足';
 
-  if (rsi > 70) return '超买区域';
-  if (rsi < 30) return '超卖区域';
-  if (rsi > 60) return '强势区域';
-  if (rsi < 40) return '弱势区域';
+  if (rsi >= 70) return '超买区域';
+  if (rsi <= 30) return '超卖区域';
+  if (rsi >= 60) return '强势区域';
+  if (rsi <= 40) return '弱势区域';
   return '中性区域';
 }

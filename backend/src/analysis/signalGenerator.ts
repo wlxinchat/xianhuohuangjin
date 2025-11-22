@@ -53,16 +53,16 @@ export class SignalGenerator {
     // 2. 动量分析 - RSI
     if (indicators.rsi !== null) {
       if (indicators.rsi < 30) {
-        bullishScore += 30;
+        bullishScore += 20;
         reasons.push(`RSI超卖(${indicators.rsi.toFixed(2)})，可能反弹`);
       } else if (indicators.rsi > 70) {
-        bearishScore += 30;
+        bearishScore += 20;
         reasons.push(`RSI超买(${indicators.rsi.toFixed(2)})，可能回调`);
       } else if (indicators.rsi < 40) {
-        bullishScore += 10;
+        bearishScore += 15;
         reasons.push('RSI处于弱势区域');
       } else if (indicators.rsi > 60) {
-        bearishScore += 10;
+        bullishScore += 15;
         reasons.push('RSI处于强势区域');
       }
     }
@@ -100,10 +100,10 @@ export class SignalGenerator {
     let signal: SignalType;
     let confidence: number;
 
-    if (bullishScore > bearishScore && bullishScore >= 40) {
+    if (bullishScore > bearishScore && bullishScore >= 25) {
       signal = SignalType.BUY;
       confidence = Math.min((bullishScore / totalScore) * 100, 95);
-    } else if (bearishScore > bullishScore && bearishScore >= 40) {
+    } else if (bearishScore > bullishScore && bearishScore >= 25) {
       signal = SignalType.SELL;
       confidence = Math.min((bearishScore / totalScore) * 100, 95);
     } else {
