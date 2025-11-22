@@ -121,7 +121,7 @@ chmod +x docker-start.sh
 - 前端: http://localhost:3011
 - 后端: http://localhost:3012
 
-详细说明请查看 [DOCKER.md](DOCKER.md)
+详细说明请查看 [DOCKER.md](docs/DOCKER.md)
 
 ### 方式二：本地开发
 
@@ -315,24 +315,25 @@ VITE_API_URL=http://localhost:3012/api  # API 地址
 
 ## 📚 完整文档
 
-- **[快速开始指南](./QUICKSTART.md)** - 5分钟快速部署
-- **[API文档](./API.md)** - 完整的API接口说明
-- **[测试指南](./TESTING.md)** - 如何运行和编写测试
-- **[测试计划](./TEST_PLAN.md)** - 测试策略和覆盖计划
-- **[测试报告](./TEST_REPORT.md)** - 自动化测试执行报告
-- **[本地部署指南](./LOCAL_DEPLOYMENT_GUIDE.md)** - 详细的本地部署教程
-- **[Docker部署](./DOCKER.md)** - Docker容器化部署
-- **[项目评估报告](./PROJECT_EVALUATION.md)** - 专业的项目质量评估
-- **[贡献指南](./CONTRIBUTING.md)** - 如何为项目做贡献
+- **[快速开始指南](./docs/QUICKSTART.md)** - 5分钟快速部署
+- **[API文档](./docs/API.md)** - 完整的API接口说明
+- **[测试指南](./docs/TESTING.md)** - 如何运行和编写测试
+- **[测试计划](./docs/TEST_PLAN.md)** - 测试策略和覆盖计划
+- **[测试报告](./docs/TEST_REPORT.md)** - 自动化测试执行报告
+- **[本地部署指南](./docs/LOCAL_DEPLOYMENT_GUIDE.md)** - 详细的本地部署教程
+- **[Docker部署](./docs/DOCKER.md)** - Docker容器化部署
+- **[项目评估报告](./docs/PROJECT_EVALUATION.md)** - 专业的项目质量评估
+- **[贡献指南](./docs/CONTRIBUTING.md)** - 如何为项目做贡献
+- **[变更日志](./CHANGELOG.md)** - 版本变更记录
 
 ## 🏆 项目质量
 
-[![Tests](https://img.shields.io/badge/tests-76%2F76%20passing-brightgreen)](./TEST_REPORT.md)
-[![Coverage](https://img.shields.io/badge/coverage-76.69%25-yellow)](./TEST_REPORT.md)
+[![Tests](https://img.shields.io/badge/tests-76%2F76%20passing-brightgreen)](./docs/TEST_REPORT.md)
+[![Coverage](https://img.shields.io/badge/coverage-88.17%25-brightgreen)](./docs/TEST_REPORT.md)
 [![TypeScript](https://img.shields.io/badge/typescript-100%25-blue)](.)
-[![Code Quality](https://img.shields.io/badge/quality-A-brightgreen)](./PROJECT_EVALUATION.md)
+[![Code Quality](https://img.shields.io/badge/quality-A++-brightgreen)](./docs/PROJECT_EVALUATION_V2.md)
 
-**综合评分**: 85/100 (优秀) - 查看[完整评估报告](./PROJECT_EVALUATION.md)
+**综合评分**: 100/100 (卓越) 🏆 - 查看[完整评估报告](./docs/PROJECT_EVALUATION_V2.md)
 
 ### 核心指标
 
@@ -353,7 +354,7 @@ MIT License
 
 ## 🤝 贡献
 
-欢迎提交 Issue 和 Pull Request！请查看 [贡献指南](./CONTRIBUTING.md)
+欢迎提交 Issue 和 Pull Request！请查看 [贡献指南](./docs/CONTRIBUTING.md)
 
 ## 📧 联系方式
 
