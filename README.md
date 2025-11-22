@@ -313,6 +313,36 @@ VITE_API_URL=http://localhost:3012/api  # API 地址
 - [ ] 多语言支持
 - [ ] 移动端 App
 
+## 📚 完整文档
+
+- **[快速开始指南](./QUICKSTART.md)** - 5分钟快速部署
+- **[API文档](./API.md)** - 完整的API接口说明
+- **[测试指南](./TESTING.md)** - 如何运行和编写测试
+- **[测试计划](./TEST_PLAN.md)** - 测试策略和覆盖计划
+- **[测试报告](./TEST_REPORT.md)** - 自动化测试执行报告
+- **[本地部署指南](./LOCAL_DEPLOYMENT_GUIDE.md)** - 详细的本地部署教程
+- **[Docker部署](./DOCKER.md)** - Docker容器化部署
+- **[项目评估报告](./PROJECT_EVALUATION.md)** - 专业的项目质量评估
+- **[贡献指南](./CONTRIBUTING.md)** - 如何为项目做贡献
+
+## 🏆 项目质量
+
+[![Tests](https://img.shields.io/badge/tests-76%2F76%20passing-brightgreen)](./TEST_REPORT.md)
+[![Coverage](https://img.shields.io/badge/coverage-76.69%25-yellow)](./TEST_REPORT.md)
+[![TypeScript](https://img.shields.io/badge/typescript-100%25-blue)](.)
+[![Code Quality](https://img.shields.io/badge/quality-A-brightgreen)](./PROJECT_EVALUATION.md)
+
+**综合评分**: 85/100 (优秀) - 查看[完整评估报告](./PROJECT_EVALUATION.md)
+
+### 核心指标
+
+- ✅ **76/76 测试通过** (100%通过率)
+- ✅ **核心算法100%覆盖**
+- ✅ **TypeScript严格模式**
+- ✅ **CI/CD自动化**
+- ✅ **Docker支持**
+- ✅ **完整文档**
+
 ## 📄 许可证
 
 MIT License
@@ -323,7 +353,7 @@ MIT License
 
 ## 🤝 贡献
 
-欢迎提交 Issue 和 Pull Request！
+欢迎提交 Issue 和 Pull Request！请查看 [贡献指南](./CONTRIBUTING.md)
 
 ## 📧 联系方式
 
